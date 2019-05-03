@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#adff2f">
+<h1 align="center"> ADD STUDENT</h1>
+<p >{{ msgs }}</p>
+
+<a href="http://127.0.0.1:8000/" >home page</a>
+<form method="post" >{% csrf_token %}
+<table border="0"  cellpadding="13" align="center" style="margin-top: 10%">
+        <tr>
+            <td>Name:</td>
+        <td><input type="text" name="nam" value=""></td>
+        </tr>
+        <tr>
+            <td>Class: </td>
+        <td><input type="text" name="clas" value=""></td>
+        </tr>
+    <tr>
+        <td>Age :</td>
+        <td><input type="text" name="ag" value=""></td>
+    </tr>
+    <tr>
+        <td>Place:</td>
+        <td><input type="text" name="plac" value=""></td>
+    </tr>
+    <tr>
+       <td> Mobile:</td>
+       <td> <input type="text" name="mobil" value=""></td>
+    </tr>
+    <tr>
+        <td>
+        <input type="submit" value="ADD" ></td>
+        <td>
+            <input type="reset" value="RESET">
+        </td>
+
+    </tr>
+
+</table>
+
+</form>
+
+</body>
+</html>

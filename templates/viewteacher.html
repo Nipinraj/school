@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#dda0dd">
+<h1 align="center">VIEW TEACHER</h1>
+{#<a href="/student/">back studentpage</a>#}
+<a href="http://127.0.0.1:8000/" >home page</a>
+<table border="1" cellpadding="35" style="margin-top: 2%" align="center">
+    <tr>
+        <th>Name</th>
+        <th>DEPARTMENT</th>
+         <th>AGE</th>
+         <th>PLACE</th>
+        <th>MOBILE</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+
+{% for i in diss %}
+    <tr>
+        <td><label type="text">{{ i.name }}</label> </td>
+        <td><label type="text">{{ i.department}}</label></td>
+        <td><label type="text" >{{ i.age}}</label></td>
+        <td><label type="text" >{{ i.place}}</label> </td>
+        <td><label type="text" >{{ i.mobile}}</label> </td>
+
+        <form method="post" action="/editteacher/">{% csrf_token %}
+            <td><input type="number"  name="ddc" value="{{ i.id }}" hidden>
+        <button type="submit"> edit</button> </td>
+        </form>
+        <form method="post">{% csrf_token %}
+            <td><input type="number" name="mid" value="{{ i.id }}" hidden >
+        <button type="submit"> delete</button> </td>
+        </form>
+
+    </tr>
+
+{% endfor %}
+</table>
+</body>
+</html>
